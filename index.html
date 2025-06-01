@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Aleatório</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://img.icons8.com/?size=100&id=85180&format=png&color=000000">
 </head>
 <body>
+
     <header id="header">
+        <div class="login-access" id="openLoginModal">
+            <span class="person-icon">👤</span>
+            <div class="login-text">
+                <span class="main-text">Entrar /</span><br>
+                <span class="sub-text">Cadastrar</span>
+            </div>
+        </div>
+
         <nav>
             <ul>
                 <li><a href="#">Início</a></li>
@@ -15,7 +25,35 @@
                 <li><a href="#">Catálogo</a></li>
             </ul>
         </nav>
+
+        <button id="menuToggle">☰</button>
     </header>
+
+    <nav class="side-menu" id="sideMenu">
+        <ul>
+            <li class="category">Camisetas
+                <ul class="sub-menu">
+                    <li>Adidas</li>
+                    <li>Nike</li>
+                    <li>BOSS</li>
+                </ul>
+            </li>
+            <li class="category">Calças
+                <ul class="sub-menu">
+                    <li>Adidas</li>
+                    <li>Nike</li>
+                    <li>BOSS</li>
+                </ul>
+            </li>
+            <li class="category">Shorts
+                <ul class="sub-menu">
+                    <li>Adidas</li>
+                    <li>Nike</li>
+                    <li>BOSS</li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
     <main>
         <section class="product-list">
@@ -26,26 +64,31 @@
                 <h3>Produto 1</h3>
                 <p>R$ 100,00</p>
             </div>
+
             <div class="product-card">
                 <img src="https://picsum.photos/1200/1200?random=2" alt="Produto 2">
                 <h3>Produto 2</h3>
                 <p>R$ 150,00</p>
             </div>
+
             <div class="product-card">
                 <img src="https://picsum.photos/1200/1200?random=3" alt="Produto 3">
                 <h3>Produto 3</h3>
                 <p>R$ 200,00</p>
             </div>
+
             <div class="product-card">
                 <img src="https://picsum.photos/1200/1200?random=4" alt="Produto 4">
                 <h3>Produto 4</h3>
                 <p>R$ 250,00</p>
             </div>
+
             <div class="product-card">
                 <img src="https://picsum.photos/1200/1200?random=5" alt="Produto 5">
                 <h3>Produto 5</h3>
                 <p>R$ 300,00</p>
             </div>
+
             <div class="product-card">
                 <img src="https://picsum.photos/1200/1200?random=6" alt="Produto 6">
                 <h3>Produto 6</h3>
@@ -57,6 +100,38 @@
     <footer>
         <p>&copy; 2025 Todos os direitos reservados.</p>
     </footer>
+
+    <div class="modal-overlay" id="modalLogin">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-tab="login">Entrar</div>
+                <div class="modal-tab" data-tab="register">Cadastrar</div>
+            </div>
+
+            <form id="formLogin" class="active">
+                <label for="loginEmail">E-mail</label>
+                <input type="email" id="loginEmail" required>
+                <label for="loginPassword">Senha</label>
+                <input type="password" id="loginPassword" required>
+                <div class="error-message" id="loginError"></div>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <form id="formRegister">
+                <label for="registerName">Nome</label>
+                <input type="text" id="registerName" required>
+                <label for="registerEmail">E-mail</label>
+                <input type="email" id="registerEmail" required>
+                <label for="registerPassword">Senha</label>
+                <input type="password" id="registerPassword" required>
+                <label for="registerConfirmPassword">Confirmar Senha</label>
+                <input type="password" id="registerConfirmPassword" required>
+                <div class="error-message" id="registerError"></div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
